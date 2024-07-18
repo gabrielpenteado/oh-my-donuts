@@ -1,0 +1,83 @@
+{
+  "donuts": [
+    {
+      "id": 1,
+      "image": "/public/images/donut1.png"
+    },
+    {
+      "id": 2,
+      "image": "/public/images/donut2.png"
+    },
+    {
+      "id": 3,
+      "image": "/public/images/donut3.png"
+    },
+    {
+      "id": 4,
+      "image": "/public/images/donut4.png"
+    },
+    {
+      "id": 5,
+      "image": "/public/images/donut5.png"
+    },
+    {
+      "id": 6,
+      "image": "/public/images/donut6.png"
+    },
+    {
+      "id": 7,
+      "image": "/public/images/donut7.png"
+    },
+    {
+      "id": 8,
+      "image": "/public/images/donut8.png"
+    },
+    {
+      "id": 9,
+      "image": "/public/images/donut9.png"
+    },
+    {
+      "id": 10,
+      "image": "/public/images/donut10.png"
+    },
+    {
+      "id": 11,
+      "image": "/public/images/donut11.png"
+    },
+    {
+      "id": 12,
+      "image": "/public/images/donut12.png"
+    },
+    {
+      "id": 13,
+      "image": "/public/images/donut13.png"
+    },
+    {
+      "id": 14,
+      "image": "/public/images/donut14.png"
+    },
+    {
+      "id": 15,
+      "image": "/public/images/donut15.png"
+    },
+    {
+      "id": 16,
+      "image": "/public/images/donut16.png"
+    }
+  ],
+  "status": [
+    {
+      "id": 1,
+      "image": "Production"
+    },
+    {
+      "id": 2,
+      "image": "Packing"
+    },
+    {
+      "id": 3,
+      "image": "Delivered"
+    }
+  ],
+  "orders": []
+}
