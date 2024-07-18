@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="footer">
     <p>Oh My Donuts by Gabriel Penteado</p>
   </div>
 </template>
@@ -10,4 +10,9 @@ export default {
 };
 </script>
 
-<style scoped></style>
+<style scoped>
+.footer {
+  background-color: blue;
+  height: 4vh;
+}
+</style>

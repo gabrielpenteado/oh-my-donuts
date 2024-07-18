@@ -1,11 +1,7 @@
 <template>
   <div class="navbar">
-    <CustomButton path="/" text="Home" />
-    <div v-if="route.name === 'Donuts'">
-      <CustomButton path="/orders" text="Orders" />
-    </div>
-    <div v-if="route.name === 'Orders'">
-      <CustomButton path="/donuts" text="Donuts" />
+    <div class="navbar-buttom" v-if="route.name === 'Orders'">
+      <CustomButton path="/" text="Home" />
     </div>
   </div>
 </template>
@@ -26,5 +22,9 @@ export default {
 <style scoped>
 .navbar {
   display: flex;
+  background-color: aqua;
+  height: 12vh;
+  justify-content: flex-end;
+  align-items: center;
 }
 </style>
