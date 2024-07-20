@@ -1,31 +1,27 @@
 <template>
-  <div class="home-background">
-    <h1>Home</h1>
-    <div class="home-buttons">
-      <CustomButton path="donuts" text="Donuts" />
-      <CustomButton path="orders" text="Orders" />
+  <div class="home-container">
+    <div class="logo">
+      <Image src="/images/logo.png" alt="logo" width="500px" />
     </div>
+    <Form></Form>
   </div>
-
-  <!-- <CustomButton class="home-button" path="/donuts" text="Donuts" />
-  <CustomButton path="/orders" text="Orders" /> -->
 </template>
 
 <script>
-import CustomButton from "../components/CustomButton.vue";
+import Image from "primevue/image";
+import Form from "../components/Form.vue";
+
 export default {
-  components: { CustomButton },
+  components: { Form, Image },
   name: "Home",
 };
 </script>
 
-<style>
-.home-background {
-  background-image: url("/images/background.png");
-  background-size: cover;
-  height: 84vh;
+<style scoped>
+.home-container {
   display: flex;
+  flex-direction: column;
+  padding-left: 350px;
   align-items: center;
-  justify-content: flex-start;
 }
 </style>
