@@ -1,4 +1,6 @@
-<template></template>
+<template>
+  <div class="orders-container"></div>
+</template>
 
 <script>
 export default {
@@ -6,4 +8,4 @@ export default {
 };
 </script>
 
-<style></style>
+<style scoped></style>
