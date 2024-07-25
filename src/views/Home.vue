@@ -1,7 +1,8 @@
 <template>
   <div class="home-container">
-    <div class="logo">
-      <img src="/images/logo.png" alt="logo" />
+    <div class="images">
+      <img class="logo" src="/images/logo.png" alt="logo" />
+      <img class="price" src="/images/price.png" alt="price" />
     </div>
     <Form></Form>
   </div>
@@ -18,9 +19,19 @@ export default {
 </script>
 
 <style scoped>
-img {
+.images {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.logo {
   width: 350px;
 }
+
+.price {
+  width: 250px;
+}
+
 .home-container {
   display: flex;
   flex-direction: column;
@@ -29,8 +40,12 @@ img {
 }
 
 @media (max-width: 1560px) {
-  img {
+  .logo {
     width: 240px;
+  }
+
+  .price {
+    width: 150px;
   }
 
   .home-container {
@@ -38,7 +53,7 @@ img {
     flex-direction: column;
     padding-left: 460px;
     align-items: center;
-    width: 90vw;
+    width: 80vw;
     height: 100%;
     justify-content: center;
   }

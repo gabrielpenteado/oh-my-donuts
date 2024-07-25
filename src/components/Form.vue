@@ -1,5 +1,5 @@
 <template>
-  <form @submit.prevent="onSubmit">
+  <form id="donuts-form" @submit.prevent="onSubmit">
     <div class="inputs">
       <InputText name="name" type="text" text="Name" v-model="order.name" />
       <InputText name="phone" type="tel" text="Phone" v-model="order.phone" />
@@ -10,37 +10,32 @@
         type="number"
         name="number"
         text="number"
-        v-model.number="order.chocoluxe"
+        v-model="order.chocoluxe"
       />
       <Card2
         type="number"
         name="number"
         text="number"
-        v-model.number="order.berrilicious"
+        v-model="order.berrilicious"
       />
-      <Card3
-        type="number"
-        name="number"
-        text="number"
-        v-model.number="order.twixie"
-      />
+      <Card3 type="number" name="number" text="number" v-model="order.twixie" />
       <Card4
         type="number"
         name="number"
         text="number"
-        v-model.number="order.frostique"
+        v-model="order.frostique"
       />
       <Card5
         type="number"
         name="number"
         text="number"
-        v-model.number="order.mochavibe"
+        v-model="order.mochavibe"
       />
       <Card6
         type="number"
         name="number"
         text="number"
-        v-model.number="order.cinnabreeze"
+        v-model="order.cinnabreeze"
       />
     </div>
     <SubmitButton class="submitButton"></SubmitButton>
@@ -81,21 +76,43 @@ export default {
         frostique: "0",
         mochavibe: "0",
         cinnabreeze: "0",
+        totalPrice: "0",
       },
     };
   },
+  watch: {
+    "order.chocoluxe": "calculateTotalPrice",
+    "order.berrilicious": "calculateTotalPrice",
+    "order.twixie": "calculateTotalPrice",
+    "order.frostique": "calculateTotalPrice",
+    "order.mochavibe": "calculateTotalPrice",
+    "order.cinnabreeze": "calculateTotalPrice",
+  },
 
-  //   computed: {
-  //     donutsList() {
-  //       return donutsData;
-  //     },
-  //   },
-  //   created() {
-  //     console.log(this.$store.state);
-  //   },
   methods: {
     onSubmit() {
-      console.log(this.order);
+      //   console.log("sent");
+      this.$store.dispatch("createOrder", this.order);
+    },
+
+    calculateTotalPrice() {
+      const stringsArray = [
+        this.order.chocoluxe,
+        this.order.berrilicious,
+        this.order.twixie,
+        this.order.frostique,
+        this.order.mochavibe,
+        this.order.cinnabreeze,
+      ];
+
+      const numbersArray = stringsArray.map(Number);
+      //   console.log(numbersArray);
+      const total = numbersArray.reduce(
+        (accumulator, currentValue) => accumulator + currentValue,
+        0
+      );
+      this.order.totalPrice = total.toString();
+      //   console.log(total.toString());
     },
   },
 };
