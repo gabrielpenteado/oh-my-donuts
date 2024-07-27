@@ -1,4 +1,5 @@
 import { createStore } from 'vuex'
+import createPersistedState from "vuex-persistedstate";
 
 export default createStore({
     state: {   // define your state here (define the variables)
@@ -6,11 +7,17 @@ export default createStore({
 
     },
     getters: {  // to get the store variable or hit api also (get state variables)
-
+        orderList(state) {
+            return state.orderList
+        }
     },
     mutations: {  // changes will be done here in state variable (update state variables)
         addOrder(state, data) { // you can call data or payload
             state.orderList.push(data)
+        },
+
+        getOrders(state, data) {
+            state.orderList = data
         },
 
         removeOrder(state, id) {
@@ -25,6 +32,10 @@ export default createStore({
     actions: {  // will call mutation to update store variable
         createOrder({ commit }, data) {
             commit('addOrder', data);
+        },
+
+        getOrderList({ commit }) {
+            commit('getOrders')
         }
 
         //   createOrder({commit}, payload) {
@@ -47,5 +58,6 @@ export default createStore({
         //     console.log('error')
         // })
         //    }
-    }
+    },
+    plugins: [createPersistedState()],
 })

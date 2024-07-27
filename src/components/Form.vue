@@ -93,6 +93,15 @@ export default {
     onSubmit() {
       //   console.log("sent");
       this.$store.dispatch("createOrder", this.order);
+
+      //   this.order.name = "";
+      //   this.order.phone = "";
+      //   this.order.chocoluxe = "0";
+      //   this.order.berrilicious = "0";
+      //   this.order.twixie = "0";
+      //   this.order.frostique = "0";
+      //   this.order.mochavibe = "0";
+      //   this.order.cinnabreeze = "0";
     },
 
     calculateTotalPrice() {
