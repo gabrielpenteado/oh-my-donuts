@@ -1,7 +1,7 @@
 <template>
   <button form="donuts-form" type="submit">
     <span class="txt">submit</span>
-    <span class="txt2">sent!</span>
+    <span class="txt2">{{ $store.state.message }}</span>
     <span class="loader-container">
       <span class="loader"></span>
     </span>
@@ -11,6 +11,18 @@
 <script>
 export default {
   name: "SubitButton",
+  data() {
+    return {
+      noDonuts: this.$store.state.message,
+    };
+  },
+  computed: {
+    handleMessage() {
+      if (this.$store.state.message == "no donuts?") {
+        return true;
+      }
+    },
+  },
 };
 </script>
 

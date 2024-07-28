@@ -101,7 +101,7 @@ table {
 
 .table {
   width: 100%;
-  height: 78%;
+  height: 80%;
   overflow-y: auto;
   overflow-x: hidden;
 }
@@ -111,6 +111,7 @@ thead {
   text-align: center;
   position: sticky;
   top: 0;
+  z-index: 4;
 }
 
 th {
@@ -144,11 +145,13 @@ td {
 
 .deleteButton {
   cursor: pointer;
-  color: red;
+  color: rgb(255, 0, 0);
   padding: 3.5px;
-  background-color: rgba(0, 0, 0, 0.37);
+  font-weight: 700;
+  font-size: 15px;
+  background-color: rgba(0, 0, 0, 0.596);
   position: relative;
-  z-index: 4;
+  z-index: 3;
 }
 
 /* for custom scrollbar for webkit browser*/
@@ -180,7 +183,7 @@ td {
     height: 300px;
     overflow-y: auto;
     overflow-x: hidden;
-    margin-right: 50px;
+    /* margin-right: 50px; */
   }
 
   .orders-container {
@@ -204,11 +207,12 @@ td {
   }
 
   .tbl-container {
-    padding-left: 440px;
+    margin-right: 200px;
   }
 
   .deleteButton {
     padding: 2.5px;
+    font-size: 12px;
   }
 }
 </style>

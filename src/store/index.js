@@ -15,6 +15,7 @@ export default createStore({
             cinnabreeze: "0",
             totalPrice: "0",
         },
+        message: "sent!"
 
     },
     getters: {  // to get the store variable or hit api also (get state variables)
@@ -42,8 +43,12 @@ export default createStore({
 
             state.order.totalPrice = total.toString();
 
-
-            state.orderList.push(state.order);
+            if (state.order.totalPrice > 0) {
+                state.message = "sent!"
+                state.orderList.push(state.order);
+            } else {
+                state.message = "no donuts?"
+            }
         },
 
         clearOrderInputs(state) {
@@ -95,6 +100,7 @@ export default createStore({
         setCinnabreeze(state, data) {
             state.order.cinnabreeze = data;
         },
+
 
         // SET_ORDER_LIST(state, payload) {
         //     state.orderList = payload
