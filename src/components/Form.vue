@@ -1,42 +1,17 @@
 <template>
   <form id="donuts-form" @submit.prevent="onSubmit">
     <div class="inputs">
-      <InputText name="name" type="text" text="Name" v-model="order.name" />
-      <InputText name="phone" type="tel" text="Phone" v-model="order.phone" />
+      <InputText name="name" type="text" text="Name" v-model="name" />
+      <InputText name="phone" type="tel" text="Phone" v-model="phone" />
     </div>
 
     <div class="donut-table">
-      <Card1
-        type="number"
-        name="number"
-        text="number"
-        v-model="order.chocoluxe"
-      />
-      <Card2
-        type="number"
-        name="number"
-        text="number"
-        v-model="order.berrilicious"
-      />
-      <Card3 type="number" name="number" text="number" v-model="order.twixie" />
-      <Card4
-        type="number"
-        name="number"
-        text="number"
-        v-model="order.frostique"
-      />
-      <Card5
-        type="number"
-        name="number"
-        text="number"
-        v-model="order.mochavibe"
-      />
-      <Card6
-        type="number"
-        name="number"
-        text="number"
-        v-model="order.cinnabreeze"
-      />
+      <Card1 type="number" name="number" text="number" v-model="chocoluxe" />
+      <Card2 type="number" name="number" text="number" v-model="berrilicious" />
+      <Card3 type="number" name="number" text="number" v-model="twixie" />
+      <Card4 type="number" name="number" text="number" v-model="frostique" />
+      <Card5 type="number" name="number" text="number" v-model="mochavibe" />
+      <Card6 type="number" name="number" text="number" v-model="cinnabreeze" />
     </div>
     <SubmitButton class="submitButton"></SubmitButton>
   </form>
@@ -65,57 +40,131 @@ export default {
     SubmitButton,
   },
   name: "Form",
-  data() {
-    return {
-      order: {
-        name: "",
-        phone: "",
-        chocoluxe: "0",
-        berrilicious: "0",
-        twixie: "0",
-        frostique: "0",
-        mochavibe: "0",
-        cinnabreeze: "0",
-        totalPrice: "0",
-      },
-    };
-  },
 
-  watch: {
-    "order.chocoluxe": "calculateTotalPrice",
-    "order.berrilicious": "calculateTotalPrice",
-    "order.twixie": "calculateTotalPrice",
-    "order.frostique": "calculateTotalPrice",
-    "order.mochavibe": "calculateTotalPrice",
-    "order.cinnabreeze": "calculateTotalPrice",
+  computed: {
+    name: {
+      get() {
+        return this.$store.state.order.name;
+      },
+      set(value) {
+        this.$store.dispatch("updateName", value);
+      },
+    },
+
+    phone: {
+      get() {
+        return this.$store.state.order.phone;
+      },
+      set(value) {
+        this.$store.dispatch("updatePhone", value);
+      },
+    },
+
+    chocoluxe: {
+      get() {
+        return this.$store.state.order.chocoluxe;
+      },
+      set(value) {
+        this.$store.dispatch("updateChocoluxe", value);
+      },
+    },
+
+    berrilicious: {
+      get() {
+        return this.$store.state.order.berrilicious;
+      },
+      set(value) {
+        this.$store.dispatch("updateBerrilicious", value);
+      },
+    },
+
+    twixie: {
+      get() {
+        return this.$store.state.order.twixie;
+      },
+      set(value) {
+        this.$store.dispatch("updateTwixie", value);
+      },
+    },
+
+    frostique: {
+      get() {
+        return this.$store.state.order.frostique;
+      },
+      set(value) {
+        this.$store.dispatch("updateFrostique", value);
+      },
+    },
+
+    mochavibe: {
+      get() {
+        return this.$store.state.order.mochavibe;
+      },
+      set(value) {
+        this.$store.dispatch("updateMochavibe", value);
+      },
+    },
+
+    cinnabreeze: {
+      get() {
+        return this.$store.state.order.cinnabreeze;
+      },
+      set(value) {
+        this.$store.dispatch("updateCinabreeze", value);
+      },
+    },
   },
+  //   data() {
+  //     return {
+  //       order: {
+  //         name: "",
+  //         phone: "",
+  //         chocoluxe: "0",
+  //         berrilicious: "0",
+  //         twixie: "0",
+  //         frostique: "0",
+  //         mochavibe: "0",
+  //         cinnabreeze: "0",
+  //         totalPrice: "0",
+  //       },
+  //     };
+  //   },
+
+  //   watch: {
+  //     "order.chocoluxe": "calculateTotalPrice",
+  //     "order.berrilicious": "calculateTotalPrice",
+  //     "order.twixie": "calculateTotalPrice",
+  //     "order.frostique": "calculateTotalPrice",
+  //     "order.mochavibe": "calculateTotalPrice",
+  //     "order.cinnabreeze": "calculateTotalPrice",
+  //   },
 
   methods: {
     onSubmit() {
       //   console.log("sent");
       this.$store.dispatch("createOrder", this.order);
     },
-
-    calculateTotalPrice() {
-      const stringsArray = [
-        this.order.chocoluxe,
-        this.order.berrilicious,
-        this.order.twixie,
-        this.order.frostique,
-        this.order.mochavibe,
-        this.order.cinnabreeze,
-      ];
-
-      const numbersArray = stringsArray.map(Number);
-      //   console.log(numbersArray);
-      const total = numbersArray.reduce(
-        (accumulator, currentValue) => accumulator + currentValue,
-        0
-      );
-      this.order.totalPrice = total.toString();
-      //   console.log(total.toString());
-    },
   },
+
+  //   calculateTotalPrice() {
+  //     const stringsArray = [
+  //       this.order.chocoluxe,
+  //       this.order.berrilicious,
+  //       this.order.twixie,
+  //       this.order.frostique,
+  //       this.order.mochavibe,
+  //       this.order.cinnabreeze,
+  //     ];
+
+  //     const numbersArray = stringsArray.map(Number);
+  //     //   console.log(numbersArray);
+  //     const total = numbersArray.reduce(
+  //       (accumulator, currentValue) => accumulator + currentValue,
+  //       0
+  //     );
+  //     this.order.totalPrice = total.toString();
+  //     //   console.log(total.toString());
+  //   },
 };
 </script>
 

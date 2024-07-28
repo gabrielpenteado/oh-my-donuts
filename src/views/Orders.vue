@@ -36,7 +36,15 @@
               <td>{{ order.cinnabreeze }}</td>
               <td>${{ order.totalPrice }}</td>
               <td></td>
-              <td>x</td>
+              <td>
+                <button
+                  class="deleteButton"
+                  @click="deleteOrderId(index)"
+                  type="submit"
+                >
+                  X
+                </button>
+              </td>
             </tr>
           </tbody>
         </table>
@@ -52,6 +60,12 @@ export default {
   computed: {
     orders() {
       return this.$store.state.orderList;
+    },
+  },
+
+  methods: {
+    deleteOrderId(id) {
+      this.$store.dispatch("deleteOrder", id);
     },
   },
 };
@@ -87,10 +101,13 @@ table {
 
 .table {
   width: 100%;
+  height: 78%;
+  overflow-y: auto;
+  overflow-x: hidden;
 }
 
 thead {
-  background-color: rgba(255, 255, 255, 0.3);
+  background-color: rgb(128, 128, 128);
   text-align: center;
   position: sticky;
   top: 0;
@@ -111,7 +128,7 @@ th {
 .orderId {
   color: rgb(245, 221, 8);
   font-size: large;
-  font-weight: 800;
+  /* font-weight: 800; */
 }
 
 td {
@@ -119,31 +136,79 @@ td {
   text-align: center;
   vertical-align: middle;
   font-weight: 300;
-  font-size: 12px;
+  font-size: 16px;
   color: #fff;
   border-bottom: solid 1px rgba(172, 172, 172, 0.808);
   font-family: "Roboto", Arial, "Segoe UI", sans-serif;
 }
 
+.deleteButton {
+  cursor: pointer;
+  color: red;
+  padding: 3.5px;
+  background-color: rgba(0, 0, 0, 0.37);
+  position: relative;
+  z-index: 4;
+}
+
 /* for custom scrollbar for webkit browser*/
 
 ::-webkit-scrollbar {
-  width: 6px;
+  width: 7px;
 }
 ::-webkit-scrollbar-track {
-  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.904);
 }
 ::-webkit-scrollbar-thumb {
-  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  -webkit-box-shadow: inset 0 0 6px rgb(255, 222, 77);
 }
 
 @media (max-width: 1560px) {
   .logo {
-    width: 400px;
+    width: 750px;
+    align-self: center;
+    /* padding-right: 250px; */
+    margin-right: 100px;
   }
 
   h1 {
     font-size: 2rem;
+  }
+
+  .table {
+    width: 100%;
+    height: 300px;
+    overflow-y: auto;
+    overflow-x: hidden;
+    margin-right: 50px;
+  }
+
+  .orders-container {
+    display: flex;
+    flex-direction: column;
+    padding-left: 160px;
+    align-items: center;
+    width: 70vw;
+    height: 100%;
+    justify-content: center;
+  }
+
+  th {
+    font-size: 14px;
+    padding: 8px 5px;
+  }
+
+  td {
+    font-size: 13px;
+    padding: 7px;
+  }
+
+  .tbl-container {
+    padding-left: 440px;
+  }
+
+  .deleteButton {
+    padding: 2.5px;
   }
 }
 </style>
