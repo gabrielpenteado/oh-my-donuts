@@ -1,9 +1,13 @@
-<h1 align="center">
+<!-- <h1 align="center">
    <strong>Oh My Donuts</strong>
-</h1>
+</h1> -->
+
+<div align="center">
+  <img src="https://raw.githubusercontent.com/gabrielpenteado/oh-my-donuts/main/public/images/logo.png">
+</div>
 
 <h2 align="center">
- Oh My Donuts is a Vue and Vuex-based app for easily placing and managing donut orders, featuring reusable form components and custom SCSS-styled buttons.
+ A Vue and Vuex-based app for easily placing and managing donut orders, featuring reusable form components and custom SASS-styled buttons.
 </h2>
 
 <div align="center">
@@ -30,7 +34,7 @@
 ## 🍩 About the project
 
 <p align="justify"> 
-   The project was built with <strong>Vue</strong> and <strong>Vuex</strong> to simplify the process of ordering donuts online. The application features reusable form input components, making it easy to manage and update order details. All input values and the list of orders are handled by Vuex for smooth state management. Custom buttons, styled with <strong>SCSS</strong>, include conditional messages to enhance the user experience.  
+   The project was built with <strong>Vue</strong> and <strong>Vuex</strong> to simplify the process of ordering donuts online. The application features reusable form input components, making it easy to manage and update order details. All input values and the list of orders are handled by Vuex for smooth state management. Custom buttons, styled with <strong>SASS</strong>, include conditional messages to enhance the user experience.  
 </p>
 
 <div align="center">
@@ -71,7 +75,7 @@
     <thead>
       <tr>
         <th style="text-align: center">
-          <a href="https://raw.githubusercontent.com/gabrielpenteado/watch-store/main/public/screenshot1.jpg">Screenshot-1</a>
+          <a href="https://raw.githubusercontent.com/gabrielpenteado/oh-my-donuts/main/public/images/screenshot1.jpg">Screenshot-1</a>
         </th>
         <th style="text-align: center">
           <a href="https://raw.githubusercontent.com/gabrielpenteado/oh-my-donuts/main/public/images/screenshot2.jpg">Screenshot-2</a>
