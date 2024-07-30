@@ -8,8 +8,8 @@
           <thead>
             <tr>
               <th scope="col">#</th>
-              <th scope="col">Phone</th>
               <th scope="col">Name</th>
+              <th scope="col">Phone</th>
               <th scope="col">Chocoluxe</th>
               <th scope="col">Berrilicious</th>
               <th scope="col">Twixie</th>
