@@ -34,7 +34,8 @@
 ## 🍩 About the project
 
 <p align="justify"> 
-   The project was built with <strong>Vue</strong> and <strong>Vuex</strong> to simplify the process of ordering donuts online. The application features reusable form input components, making it easy to manage and update order details. All input values and the list of orders are handled by Vuex for smooth state management. Custom buttons, styled with <strong>SASS</strong>, include conditional messages to enhance the user experience.  
+   The project was built with <strong>Vue</strong> and <strong>Vuex</strong> to simplify the process of ordering donuts online. The application features reusable form input components, making it easy to manage and update order details.
+   It also integrates <strong>Vue Router</strong> to handle navigation between the home page and the orders page. All input values and the list of orders are handled by Vuex for smooth state management. Custom buttons, styled with <strong>SASS</strong>, include conditional messages to enhance the user experience.  
 </p>
 
 <div align="center">
@@ -52,7 +53,7 @@
     <tbody>
       <tr>
         <td>
-          <a href="https://www.youtube.com">
+          <a href="https://www.youtube.com/watch?v=1vZzvyr_ZsU">
             <img src="https://img.shields.io/badge/YouTube-FF0000?style=for-the-badge&logo=youtube&logoColor=white" />
           </a>
         </td>  
