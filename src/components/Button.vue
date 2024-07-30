@@ -36,6 +36,7 @@ button {
   font-weight: 500;
   color: #fff;
   z-index: 2;
+  cursor: pointer;
 }
 
 button::after {

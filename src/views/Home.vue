@@ -4,9 +4,9 @@
       <img class="logo" src="/images/logo.png" alt="logo" />
       <img class="price" src="/images/price.png" alt="price" />
     </div>
-    <span class="message" v-show="$store.state.message">{{
+    <!-- <span class="message" v-show="$store.state.message">{{
       $store.state.message
-    }}</span>
+    }}</span> -->
     <Form></Form>
   </div>
 </template>
